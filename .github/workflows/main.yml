@@ -3,7 +3,7 @@ name: Todo app e2e tests
 on: [push]
 
 jobs:
-  install:
+  run_cypress_tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
