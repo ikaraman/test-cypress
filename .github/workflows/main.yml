@@ -3,16 +3,14 @@ name: Todo app e2e tests
 on: [push]
 
 jobs:
-  install_dependencies:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
   run_cypress_tests:
     runs-on: ubuntu-latest
     needs: install_dependencies
     steps:
+      - steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+
       - name: Run e2e tests
         uses: cypress-io/github-action@v3
         with:
